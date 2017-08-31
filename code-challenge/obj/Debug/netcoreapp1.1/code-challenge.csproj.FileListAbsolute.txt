@@ -1,0 +1,9 @@
+D:\_Source\_GIT\eaze\interview-dotnet-test\code-challenge\bin\Debug\netcoreapp1.1\code-challenge.deps.json
+D:\_Source\_GIT\eaze\interview-dotnet-test\code-challenge\bin\Debug\netcoreapp1.1\code-challenge.runtimeconfig.json
+D:\_Source\_GIT\eaze\interview-dotnet-test\code-challenge\bin\Debug\netcoreapp1.1\code-challenge.runtimeconfig.dev.json
+D:\_Source\_GIT\eaze\interview-dotnet-test\code-challenge\bin\Debug\netcoreapp1.1\code-challenge.dll
+D:\_Source\_GIT\eaze\interview-dotnet-test\code-challenge\bin\Debug\netcoreapp1.1\code-challenge.pdb
+D:\_Source\_GIT\eaze\interview-dotnet-test\code-challenge\obj\Debug\netcoreapp1.1\code-challenge.csprojResolveAssemblyReference.cache
+D:\_Source\_GIT\eaze\interview-dotnet-test\code-challenge\obj\Debug\netcoreapp1.1\code-challenge.AssemblyInfo.cs
+D:\_Source\_GIT\eaze\interview-dotnet-test\code-challenge\obj\Debug\netcoreapp1.1\code-challenge.dll
+D:\_Source\_GIT\eaze\interview-dotnet-test\code-challenge\obj\Debug\netcoreapp1.1\code-challenge.pdb
