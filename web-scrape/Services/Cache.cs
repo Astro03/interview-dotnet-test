@@ -1,7 +1,7 @@
-﻿using code_challenge.Models;
+﻿using web_scrape.Models;
 using System.Collections.Generic;
 
-namespace code_challenge.Services
+namespace web_scrape.Services
 {
     /// <summary>
     /// Can substitute with a memcache  - have all objects come from a same ICache interface

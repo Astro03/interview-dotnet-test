@@ -1,4 +1,4 @@
-﻿namespace code_challenge.Models
+﻿namespace web_scrape.Models
 {
     /// <summary>
     /// Standard response to API call

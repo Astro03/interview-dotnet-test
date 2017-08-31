@@ -1,9 +1,9 @@
-﻿using code_challenge.Models;
-using code_challenge.Services;
+﻿using web_scrape.Models;
+using web_scrape.Services;
 using Supremes;
 using System;
 
-namespace code_challenge.Workers
+namespace web_scrape.Workers
 {
     /// <summary>
     /// workers who take jobs off the web scraper job queue.

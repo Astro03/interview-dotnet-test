@@ -1,4 +1,4 @@
-﻿using code_challenge.Workers;
+﻿using web_scrape.Workers;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -7,7 +7,7 @@ using Microsoft.Extensions.Logging;
 using System.Collections.Generic;
 using System.Threading;
 
-namespace code_challenge
+namespace web_scrape
 {
     public class Startup
     {

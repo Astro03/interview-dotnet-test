@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace code_challenge.Models
+namespace web_scrape.Models
 {
     public class ScrapeJob
     {

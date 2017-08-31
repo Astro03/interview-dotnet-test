@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Hosting;
 using System.IO;
 
-namespace code_challenge
+namespace web_scrape
 {
     public class Program
     {

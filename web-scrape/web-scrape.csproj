@@ -2,8 +2,12 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp1.1</TargetFramework>
-    <AssemblyName>code-challenge</AssemblyName>
-    <RootNamespace>code_challenge</RootNamespace>
+    <AssemblyName>web-scrape</AssemblyName>
+    <RootNamespace>web_scrape</RootNamespace>
+    <Authors>Astro</Authors>
+    <Company>Astronet</Company>
+    <Product>web-scrape</Product>
+    <PackageId>web-scrape</PackageId>
   </PropertyGroup>
 
   <ItemGroup>

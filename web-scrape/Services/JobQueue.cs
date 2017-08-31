@@ -1,8 +1,8 @@
-﻿using code_challenge.Models;
+﻿using web_scrape.Models;
 using System;
 using System.Collections.Concurrent;
 
-namespace code_challenge.Services
+namespace web_scrape.Services
 {
     /// <summary>
     /// ideally something like rabbitMQ or AmazonSQS

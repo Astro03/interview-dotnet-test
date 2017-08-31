@@ -1,8 +1,8 @@
-﻿using code_challenge.Models;
-using code_challenge.Services;
+﻿using web_scrape.Models;
+using web_scrape.Services;
 using Microsoft.AspNetCore.Mvc;
 
-namespace code_challenge.Controllers
+namespace web_scrape.Controllers
 {
     /// <summary>
     /// Checks status of job (get), submitting a job (post)
