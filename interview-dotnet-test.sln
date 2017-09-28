@@ -1,11 +1,16 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26430.15
+VisualStudioVersion = 15.0.26730.16
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "web-scrape", "web-scrape\web-scrape.csproj", "{CDC072E0-29FA-4D18-99F9-D877B500F778}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "web-scrape-tests", "web-scrape-tests\web-scrape-tests.csproj", "{2A513E8E-4667-46DB-8A06-43BB11340B20}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "web-scrape-tests", "web-scrape-tests\web-scrape-tests.csproj", "{2A513E8E-4667-46DB-8A06-43BB11340B20}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{44880E33-80F4-4869-92D4-C57F9C0AEDD6}"
+	ProjectSection(SolutionItems) = preProject
+		Readme.md = Readme.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -24,5 +29,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2F7948E7-71FE-4B8C-BDBE-B8A54CC7234D}
 	EndGlobalSection
 EndGlobal
