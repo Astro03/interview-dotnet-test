@@ -61,7 +61,7 @@ namespace web_scrape.Services
             {
                 // put logging here
                 Console.WriteLine(e);
-                job.StatusEnum = ScrapeJobStatus.JobQueueError;
+                job.StatusEnum = ScrapeJobStatus.Job_Queue_Error;
                 retVal = false;
             }
             return retVal;

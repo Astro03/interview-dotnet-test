@@ -2,6 +2,7 @@
 using web_scrape.Services;
 using Supremes;
 using System;
+using System.Net;
 
 namespace web_scrape.Workers
 {
@@ -42,7 +43,7 @@ namespace web_scrape.Workers
             while (true)
             {
                 var job = _JobQueue.Take();
-                _Cache.UpdateJob(job.Id, ScrapeJobStatus.InProgress);
+                _Cache.UpdateJob(job.Id, ScrapeJobStatus.In_Progress);
                 _Scrape(job);
                 _Cache.UpdateJob(job.Id, job.StatusEnum, job.Result); 
             }
@@ -73,7 +74,7 @@ namespace web_scrape.Workers
                     }
                     catch(Exception e)
                     {
-                        job.StatusEnum = ScrapeJobStatus.DcsoupError;
+                        job.StatusEnum = ScrapeJobStatus.Dcsoup_Error;
                         Console.WriteLine(e);
                     }
                 }
@@ -86,12 +87,12 @@ namespace web_scrape.Workers
             }
             catch(UriFormatException ufe)
             {
-                job.StatusEnum = ScrapeJobStatus.InvalidUrl;
+                job.StatusEnum = ScrapeJobStatus.Invalid_Url;
                 Console.WriteLine(ufe);
             }
             catch (Exception e)
             {
-                job.StatusEnum = ScrapeJobStatus.DcsoupError;
+                job.StatusEnum = ScrapeJobStatus.Dcsoup_Error;
                 Console.WriteLine(e);
             }
         }

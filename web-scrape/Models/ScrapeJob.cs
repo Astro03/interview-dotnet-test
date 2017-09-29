@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json.Linq;
+using System;
 using System.Collections.Generic;
 
 namespace web_scrape.Models
@@ -32,7 +33,6 @@ namespace web_scrape.Models
             Result = new List<string>();
         }
 
-
         #region Public Properties
         /// <summary>
         /// Unique id of the job
@@ -62,17 +62,52 @@ namespace web_scrape.Models
         /// <summary>
         /// 
         /// </summary>
-        public string Status => StatusEnum.ToString();
+        public string Status => StatusEnum.ToString().Replace('_', ' ');
 
         /// <summary>
         /// Result of the job
         /// </summary>
         public List<string> Result { get; set; }
         #endregion Public Properties
+
+        #region Public Methods
+        /// <summary>
+        /// Get a json object 
+        /// </summary>
+        /// <param name="withResult">true will put results, false will not</param>
+        /// <returns>json object</returns>
+        public JObject GetJson(bool withResult = false)
+        {
+            var json = new JObject
+            {
+                ["id"] = id,
+                ["status"] = Status,
+                ["url"] = Url
+            };
+
+            if (string.IsNullOrWhiteSpace(Selector))
+            {
+                json["selector"] = Selector;
+            }
+
+            if (withResult)
+            {
+                if (Result.Count > 0)
+                {
+                    json["result"] = new JObject(Result);
+                }
+                else
+                {
+                    json["result"] = "no result";
+                }
+            }
+            return json;
+        }
+        #endregion Public Methods
     }
 
     /// <summary>
     /// Possible States for the ScrapeJob
     /// </summary>
-    public enum ScrapeJobStatus { Pending, Queued, InProgress, Completed, JobQueueError, NotFound, InvalidUrl, DcsoupError };
+    public enum ScrapeJobStatus { Pending, Queued, In_Progress, Completed, Job_Queue_Error, NotFound, Invalid_Url, Dcsoup_Error };
 }

@@ -27,27 +27,28 @@ namespace web_scrape.Controllers
         /// GET api/values/5
         /// </summary>
         /// <param name="id">id of job we want to find</param>
-        /// <returns>AstroResponse with Error Code</returns>
-        [HttpGet("{id}")]
-        public WebScrapeResponse GetJob(int id)
+        /// <returns>result of getting a job</returns>
+        [HttpGet("{id}", Name = "GetJob")]
+        public IActionResult GetJob(int id)
         {
             var job = _Cache.GetJob(id);
-            var resp = new WebScrapeResponse(job, null == job ? ErrorCode.NotFound : ErrorCode.Success);
-            return resp;
+            return (job == null) ?
+                new NotFoundObjectResult(new { err_msg = "Job with id not found", id = id }) :
+                (IActionResult)new OkObjectResult(job.GetJson(true));
         }
 
         /// <summary>
         /// POST api/scrape
         /// </summary>
         /// <param name="req"></param>
-        /// <returns>AstroResponse with Error Code</returns>
+        /// <returns>Result of Job creation</returns>
         [HttpPost]
-        public WebScrapeResponse CreateJob([FromBody]WebScrapeRequest req)
+        public IActionResult CreateJob([FromBody]WebScrapeRequest req)
         {
             // basic error checking
             if (null == req || string.IsNullOrWhiteSpace(req.Url))
             {
-                return new WebScrapeResponse(null, ErrorCode.InvalidInput);
+                return new BadRequestObjectResult(new { err_msg = "Invalid input" });
             }
 
             // create job
@@ -57,8 +58,10 @@ namespace web_scrape.Controllers
             // NOTE: this can cause issues if we don't sync properly
             var worked = _JobQueue.Add(job) && _Cache.AddJob(job);
 
-            var resp = new WebScrapeResponse(job, worked ? ErrorCode.Success : ErrorCode.FailedQueue);
-            return resp;
+            var json = job.GetJson();
+            return (worked) ?
+                new CreatedAtRouteResult("GetJob", new { id = job.Id }, json) :
+                new ObjectResult(json) { StatusCode = 500 };
         }
         #endregion Public Methods
     }
